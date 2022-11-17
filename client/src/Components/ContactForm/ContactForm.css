@@ -1,0 +1,44 @@
+
+.contact-form{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content:center;
+    align-items: center;
+    flex-direction:column;
+    
+
+  
+}
+header{
+    
+    background-color: rgb(70, 71, 71);
+    font-weight: 500;
+    font-size: 1.6rem;
+    padding-left: 2rem;
+    height: 7vh;
+    color:white
+}
+.text-fields{
+    
+    flex-direction: column;
+    display: flex;
+    gap: 1rem;
+
+}
+.text-fields #outlined-required{
+    width: 500px;
+    height: 10px;
+}
+.text-fields #outlined-multiline-static{
+    display: flex;
+    align-items: flex-start;
+}
+.add-button-container{
+
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    
+}
+
