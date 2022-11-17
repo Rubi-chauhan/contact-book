@@ -11,24 +11,24 @@ export const addContact = (data)=>{
 
 }
 
-export const getAllContacts = ()=>{
+export const getAllContacts = async()=>{
 
-    axios.get(apiURL)
+   return await axios.get(apiURL)
 
 }
 
-export const getContact = (contactId)=>{
+export const getContact = async(contactId)=>{
   
-    axios.get(apiURL+'/'+ contactId)
+    return await  axios.get(apiURL+'/'+ contactId)
  
 }
 
-export const updatecontact = (contactId,data)=>{
+export const updatecontact = async (contactId,data)=>{
 
-    axios.put(apiURL+'/'+ contactId, data)
+    return await axios.put(apiURL+'/'+ contactId, data)
 }
 
-export const deletecontact = (contactId)=>{
+export const deletecontact = async(contactId)=>{
 
-    axios.delete(apiURL+'/'+ contactId)
+    return await axios.delete(apiURL+'/'+ contactId)
 }
