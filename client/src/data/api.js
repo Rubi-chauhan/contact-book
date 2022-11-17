@@ -5,9 +5,9 @@ import axios from 'axios';
 const apiURL = 'http://localhost:5000/contacts'
 
 
-export const addContact = (data)=>{
+export const addContact = async(data)=>{
 
-       axios.post(apiURL, data)
+      return await axios.post(apiURL, data)
 
 }
 
@@ -17,18 +17,18 @@ export const getAllContacts = async()=>{
 
 }
 
-export const getContact = async(contactId)=>{
+export const getContact = async(id)=>{
   
-    return await  axios.get(apiURL+'/'+ contactId)
+    return await  axios.get(`${apiURL}/${id}`)
  
 }
 
-export const updatecontact = async (contactId,data)=>{
+export const updatecontact = async (id,data)=>{
 
-    return await axios.put(apiURL+'/'+ contactId, data)
+    return await axios.put(`${apiURL}/${id}`, data)
 }
 
-export const deletecontact = async(contactId)=>{
+export const deletecontact = async(id)=>{
 
-    return await axios.delete(apiURL+'/'+ contactId)
+    return await axios.delete(`${apiURL}/${id}`)
 }

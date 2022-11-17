@@ -15,16 +15,17 @@ const ContactForm = () => {
     note: "",
 });
 
-const handleChange = ({ target: { name, value } }) => {
-  setnewContactForm({ ...newContactForm, [name]: value })
-  setnewContactForm =('')
-};
-
 const handleAdd = () => {
   const newContactData = { ...newContactForm }
   addContact(newContactData);
+  setnewContactForm('')
+};
+
+const handleChange = ({ target: { name, value } }) => {
+  setnewContactForm({ ...newContactForm, [name]: value })
   
 };
+
 
 
 

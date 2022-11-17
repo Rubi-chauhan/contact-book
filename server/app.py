@@ -65,7 +65,7 @@ def oneDAta(id):
         return jsonify(dataDict)
 
     if request.method == 'DELETE':
-        data= db['contacts'].delete_many({'_id':ObjectId(id)})
+        data= db['contacts'].delete_one({'_id':ObjectId(id)})
         return jsonify({
             "status":"Contact id:" + id + "is deleted"
         })
