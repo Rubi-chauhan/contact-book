@@ -23,9 +23,10 @@ export const getContact = async(id)=>{
  
 }
 
-export const updatecontact = async (id,data)=>{
+export const updatecontact = async (data)=>{
+    console.log(data)
 
-    return await axios.put(`${apiURL}/${id}`, data)
+    return await axios.put(`${apiURL}/${data.id}`, data)
 }
 
 export const deletecontact = async(id)=>{
