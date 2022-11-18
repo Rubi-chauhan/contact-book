@@ -61,13 +61,13 @@ export default function UpdateContact() {
   
           <div className='text-fields'>
   
-          <TextField required id="outlined-required" label="Name" name="name" onChange={handleChange} value={editData.name} />
+          <TextField required id="outlined-required" label="Name" name="name" onChange={handleChange}  />
   
-          <TextField  required  id="outlined-required"  label="Phone Number" name="phone_number" onChange={handleChange} value={editData.phone_number}/>
+          <TextField  required  id="outlined-required"  label="Phone Number" name="phone_number" onChange={handleChange} />
   
-          <TextField required id="outlined-required" label="Email" name="email" onChange={handleChange} value={editData.email} />
+          <TextField required id="outlined-required" label="Email" name="email" onChange={handleChange}  />
   
-          <TextField  id="outlined-multiline-static"label="Note" name="note" multiline rows={4} onChange={handleChange} value={editData.note}/>
+          <TextField  id="outlined-multiline-static"label="Note" name="note" multiline rows={4} onChange={handleChange} />
             
           </div>
   
