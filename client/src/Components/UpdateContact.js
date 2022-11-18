@@ -2,7 +2,7 @@ import React, {  useState } from 'react'
 import  {updatecontact}  from '../data/api';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-// import {useParams} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 
 export default function UpdateContact() {
 
@@ -13,7 +13,7 @@ export default function UpdateContact() {
     note: "",
   })
             // const history = useHistory();
-            // const {id} = useParams()
+            const {id} = useParams()
 
 
       // useEffect(()=>{
@@ -33,9 +33,9 @@ export default function UpdateContact() {
   //     note: "",
   // });
   
-  const handleUpdate = (id) => {
+  const handleUpdate = () => {
     const newContactData = { id, ...editData }
-    console.log(newContactData)
+    console.log('from handel update',newContactData)
     updatecontact(newContactData);
     seteditData('')
   };
@@ -72,7 +72,7 @@ export default function UpdateContact() {
           </div>
   
           <div className='add-button-container'>
-          <Button type='submit' onClick={handleUpdate()} variant="contained">Save</Button>
+          <Button type='submit' onClick={handleUpdate} variant="contained">Save</Button>
          
           </div>
           

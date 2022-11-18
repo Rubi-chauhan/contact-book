@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 
-const apiURL = 'http://localhost:5000/contacts'
+const apiURL = 'http://localhost:8000/contacts'
 
 
 export const addContact = async(data)=>{
@@ -24,7 +24,7 @@ export const getContact = async(id)=>{
 }
 
 export const updatecontact = async (data)=>{
-    console.log(data)
+    console.log('before axios',data)
 
     return await axios.put(`${apiURL}/${data.id}`, data)
 }

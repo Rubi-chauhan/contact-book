@@ -11,19 +11,46 @@ db = client['contact_handbook']
 
 CORS(app)
 
-@app.route('/contacts', methods=['POST','GET'])
+# @app.route('/contacts', methods=['POST','GET'])
+# def data():
+
+#     if request.method == 'POST':
+#         body = request.json
+#         name = body['name']
+#         phone_number: body['phone_number']
+#         email: body['email']
+#         note: body['note']
+
+
+
+#         db['contacts'].insert_one({
+#             "name": name,
+#             "phone_number": phone_number,
+#             "email": email,
+#             "note": note
+#         })  
+
+#         return jsonify({
+#             'status': 'Contact created successfully',
+#             'name':name,
+#             'phone_number':phone_number,
+#             'email':email
+#         })
+
+@app.route('/contacts', methods=['POST', 'GET'])
 def data():
-
+    
+    # POST a data to database
     if request.method == 'POST':
-
-        result = db['contacts'].insert_one({
+        
+        # db.users.insert_one({
+        db['contacts'].insert_one({
             "name": request.json['name'],
-            "phone_number": request.json['phone_number'],
-            "email": request.json['email'],
-            "note": request.json['note']
+            "phone_number":request.json['phone_number'],
+            "email":request.json['email'],
+            "note":request.json['note']
         })
-
-        return jsonify(result)
+        return jsonify({"status":"Contact created successfully"})
 
 
 
@@ -68,7 +95,7 @@ def oneDAta(id):
 
     if request.method == 'PUT':
 
-        db['contacts'].update_one({
+        result =db['contacts'].update_one({
             '_id':ObjectId(id)},
             {
                 "$set":{
@@ -89,5 +116,5 @@ def oneDAta(id):
 
 if __name__ == '__main__':
     app.debug: True
-    app.run()
+    app.run(port=8000)
 
