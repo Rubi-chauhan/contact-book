@@ -23,11 +23,7 @@ def data():
             "note": request.json['note']
         })
 
-        return jsonify({
-            'status':'contact created sucessfully',
-            "data": result
-
-        })
+        return jsonify(result)
 
 
 

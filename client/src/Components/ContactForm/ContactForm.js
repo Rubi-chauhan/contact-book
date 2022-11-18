@@ -8,6 +8,8 @@ import './ContactForm.css'
 
 
 const ContactForm = () => {
+  
+
   let [newContactForm, setnewContactForm] = useState({
     name: "",
     phone_number: "",
@@ -31,9 +33,6 @@ const handleChange = ({ target: { name, value } }) => {
 
     return (
       <div>
-        <div>
-        <header className='title'>Contact App</header>
-        </div>
 
         <div className='contact-form'>
 

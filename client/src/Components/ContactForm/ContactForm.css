@@ -17,7 +17,9 @@ header{
     font-size: 1.6rem;
     padding-left: 2rem;
     height: 7vh;
-    color:white
+    color:white;
+    text-decoration: none;
+    
 }
 .text-fields{
     

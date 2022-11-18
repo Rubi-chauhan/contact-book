@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import './ContactList.css'
 import {getAllContacts, deletecontact} from '../../data/api'
-import {Link, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 
 export default function ContactList() {
@@ -34,10 +34,14 @@ export default function ContactList() {
 
    
 
-      const saveData = ()=>{
+      const saveData = (id)=>{
         
-        navigate('/update-contact')
+        navigate(`/update-contact/${id}`)
       
+      }
+
+      const addNew = ()=>{
+        navigate(`/add-contact`)
       }
 
       const handleChange = ({ target: { name, value } }) => {
@@ -63,19 +67,20 @@ export default function ContactList() {
             <p>List of your contacts in your directory </p>
         </div>
 
-        <button className="btn btn-primary"> Create new contact</button>
+        <button className="btn btn-primary" onClick={()=>addNew()}> Create new contact</button>
+        <p></p>
 
         <div className="show-list">
         {newContact && newContact.map(contact =>
         
              ( <div key={contact._id}>
-                <TextField name="name" value={newUpdate.name } onChange={handleChange}/>
-                <TextField name="email" value={newUpdate.email} onChange={handleChange}/>
-                <TextField name="phone_number" value={newUpdate.phone_number} onChange={handleChange}/>
-                <TextField  name="note" value={newUpdate.note} onChange={handleChange}/>
+                <TextField name="name" value={contact.name } onChange={handleChange}/>
+                <TextField name="email" value={contact.email} onChange={handleChange}/>
+                <TextField name="phone_number" value={contact.phone_number} onChange={handleChange}/>
+                <TextField  name="note" value={contact.note} onChange={handleChange}/>
                 <div className="button-container">
 
-           <Button type='submit' variant="contained" onClick={saveData()}>Edit</Button>
+           <Button type='submit' variant="contained" onClick={()=>saveData(contact._id)}>Edit</Button>
             <button type="submit" className='btn btn-danger' onClick={()=>handleDelete(contact._id)}>Delete</button>
 
          </div>
